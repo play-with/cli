@@ -1,6 +1,6 @@
 {
   "name": "playwith-cli",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Commandline tool for running playground scripts",
   "bin": {
     "playwith": "lib/index.js"
