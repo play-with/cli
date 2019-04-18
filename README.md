@@ -1,4 +1,4 @@
-# Playwith CLI
+# Playwith CLI [![CircleCI](https://circleci.com/gh/play-with/cli.svg?style=svg)](https://circleci.com/gh/play-with/cli)
 
 This command-line tool allows you to create scripts within a project that can having all the contexts and packages of the nodejs app or module
 
