@@ -1,0 +1,46 @@
+version: 2
+jobs:
+  deploy:
+    docker:
+      - image: circleci/node:8.10
+    working_directory: ~/repo
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+
+      - run:
+          name: 'Install NPM token'
+          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+
+
+      - run:
+          name: 'Install dev packages'
+          command: npm install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-
+
+      - run:
+          name: 'Run tests with coverage'
+          command: npm run test
+
+      - run
+          name: 'Publish package'
+          command: npm publish
+
+
+workflows:
+  version: 2
+  test-deploy:
+    jobs:
+      - deploy:
+        filters:
+          branches:
+            only: master
+
+
