@@ -29,7 +29,7 @@ jobs:
           name: 'Run tests with coverage'
           command: npm run test
 
-      - run
+      - run:
           name: 'Publish package'
           command: npm publish
 
