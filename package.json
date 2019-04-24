@@ -1,6 +1,6 @@
 {
   "name": "playwith-cli",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Commandline tool for running playground scripts",
   "bin": {
     "playwith": "lib/index.js"
@@ -15,7 +15,9 @@
     "lint": "standard --verbose --fix | snazzy",
     "test": "nyc mocha '{,!(node_modules|coverage|docs)/**/}*.test.js' --color --no-timeouts"
   },
-  "keywords": [],
+  "keywords": [
+
+  ],
   "standard": {
     "env": [
       "mocha"
